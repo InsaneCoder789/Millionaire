@@ -446,7 +446,7 @@ def phoneclick():
 root = Tk()
 root.geometry('1270x652+0+0')
 root.resizable(0, 0)
-root.title('Who Wants To Be A Millionaire Created By Faizan Khan')
+root.title('Who Wants To Be A Millionaire')
 root.config(bg='black')
 
 leftFrame = Frame(root, bg='black', padx=90)

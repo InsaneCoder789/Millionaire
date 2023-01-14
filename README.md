@@ -11,8 +11,8 @@ Made by
 A Property for Mayoor Private School 
 
 
-This App has been made using the following modules 
-1 . Tkinter ( for visual graphics ) 
+<p> This App has been made using the following modules </p>
+<p> 1 . Tkinter ( for visual graphics )</p>
 2 . Pygame ( for Music Control ) 
 3 . Pyttxs3 ( For Voice Modulation Control ) 
 

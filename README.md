@@ -21,4 +21,4 @@ A Property for Mayoor Private School
 
 
 <Header> Preview of The Game </header>
-<img src="<img width="1279" alt="KBC_Front" src="https://user-images.githubusercontent.com/83532283/212460641-110b8dac-4f37-42fa-b993-c94f60790c79.png">
+<img src="<img width="1279" alt="KBC_Front" src="https://user-images.githubusercontent.com/83532283/212460641-110b8dac-4f37-42fa-b993-c94f60790c79.png"/>

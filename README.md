@@ -3,9 +3,9 @@
 :-  A Python Based Millionairite Web Game to take Quiz Gaming to the next level !!!! 
 
 Made by 
-1. Rohan Chatterjee 
-2. Prakhar Maheshwari 
-3. Shreshth Gupta 
+1. [Rohan Chatterjee](https://www.instagram.com/its_rohan0204/)
+2. [Prakhar Maheshwari](https://www.instagram.com/x_.justprakhar._x/) 
+3. [Shreshth Gupta](https://www.instagram.com/shreshth_0703/)
 
 
 A Property for Mayoor Private School 

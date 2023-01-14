@@ -17,3 +17,4 @@ A Property for Mayoor Private School
 <p> 3 . Pyttxs3 ( For Voice Modulation Control ) </p>
 
 
+<img src="center.png" width="128"/>

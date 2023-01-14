@@ -1,6 +1,6 @@
-Who Wants to be a Millionaire !!!
+<title> Who Wants to be a Millionaire !!! </title>
 
-A Python Based Millionairite Web Game to take Quiz Gaming to the next level !!!! 
+:-  A Python Based Millionairite Web Game to take Quiz Gaming to the next level !!!! 
 
 Made by 
 1. Rohan Chatterjee 
@@ -13,6 +13,7 @@ A Property for Mayoor Private School
 
 <p> This App has been made using the following modules </p>
 <p> 1 . Tkinter ( for visual graphics )</p>
-2 . Pygame ( for Music Control ) 
-3 . Pyttxs3 ( For Voice Modulation Control ) 
+<p> 2 . Pygame ( for Music Control )</p>
+<p> 3 . Pyttxs3 ( For Voice Modulation Control ) </p>
+
 

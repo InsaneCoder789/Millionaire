@@ -1,4 +1,4 @@
-<title> Who Wants to be a Millionaire !!! </title>
+ Who Wants to be a Millionaire !!!
 
 :-  A Python Based Millionairite Web Game to take Quiz Gaming to the next level !!!! 
 

@@ -113,14 +113,14 @@ def select(event):
                 root2.config(bg='black')
                 root2.geometry('500x400+140+30')
                 root2.title('You won 1 million Pounds')
-                centerimg = PhotoImage(file='center.png')
+                centerimg = PhotoImage(file='Kbc/center.png')
                 imgLabel = Label(root2, image=centerimg, bd=0, )
                 imgLabel.pack(pady=30)
 
                 winlabel = Label(root2, text='You Won', font=('arial', 40, 'bold'), bg='black', fg='white')
                 winlabel.pack()
 
-                happyimage = PhotoImage(file='Kbc /happy.png')
+                happyimage = PhotoImage(file='Kbc/happy.png')
                 happYLabel = Label(root2, image=happyimage, bg='black')
                 happYLabel.place(x=400, y=280)
 
@@ -179,24 +179,24 @@ def select(event):
             root1.config(bg='black')
             root1.geometry('500x400+140+30')
             root1.title('You won 0 Pound')
-            img = PhotoImage(file='Kbc /center.png')
+            img = PhotoImage(file='Kbc/center.png')
             imgLabel = Label(root1, image=img, bd=0)
             imgLabel.pack(pady=30)
-            loselabel = Label(root1, text='You Lose', font=('arial', 40, 'bold'), bg='black')
+            loselabel = Label(root1, text='You Lose', font=('arial', 40, 'bold'), bg='black', fg='white')
             loselabel.pack()
-            sadimage = PhotoImage(file='Kbc /sad.png')
+            sadimage = PhotoImage(file='Kbc/sad.png')
             sadlabel = Label(root1, image=sadimage, bg='black')
             sadlabel.place(x=400, y=280)
             sadlabel1 = Label(root1, image=sadimage, bg='black')
             sadlabel1.place(x=30, y=280)
 
-            tryagainButton = Button(root1, text='Try Again', font=('arial', 20, 'bold'), bg='black', bd=0
-                                    , activebackground='black', cursor='hand2',
+            tryagainButton = Button(root1, text='Try Again', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                                    , activebackground='black', cursor='hand2', activeforeground='white',
                                     command=tryagain)
             tryagainButton.pack()
 
-            closeButton = Button(root1, text='Close', font=('arial', 20, 'bold'), bg='black', bd=0
-                                 , activebackground='black', cursor='hand2',
+            closeButton = Button(root1, text='Close', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                                 , activebackground='black', cursor='hand2', activeforeground='white',
                                  command=on_closing)
             closeButton.pack()
 
@@ -446,7 +446,7 @@ def phoneclick():
 root = Tk()
 root.geometry('1270x652+0+0')
 root.resizable(0, 0)
-root.title('Who Wants To Be A Millionaire')
+root.title('Millionaire Game')
 root.config(bg='black')
 
 leftFrame = Frame(root, bg='black', padx=90)
@@ -464,46 +464,49 @@ middleFrame.grid(row=1, column=0)
 bottomFrame = Frame(leftFrame, bg='black')
 bottomFrame.grid(row=2, column=0)
 
-centreImage = PhotoImage(file='Kbc /center.png')
+centreImage = PhotoImage(file='Kbc/center.png')
 logoLabel = Label(middleFrame, image=centreImage, bd=0, width=300, height=200, bg='black')
 logoLabel.grid(row=0, column=0)
 
-image50 = PhotoImage(file='Kbc /50-50.png')
-image50x = PhotoImage(file='Kbc /50-50-X.png')
+image50 = PhotoImage(file='Kbc/50-50.png')
+image50x = PhotoImage(file='Kbc/50-50-X.png')
 
-lifeline50Button = Button(topFrame, image=image50, bd=0, bg='black', cursor='hand2', activebackground='black', command=lifeline50)
+lifeline50Button = Button(topFrame, image=image50, bd=0, bg='black', cursor='hand2', activebackground='black', width=180,
+                      height=80, command=lifeline50)
 lifeline50Button.grid(row=0, column=0)
 
-audiencePole = PhotoImage(file='Kbc /audiencePole.png')
-audiencePolex = PhotoImage(file='Kbc /audiencePoleX.png')
-audiencePoleButton = Button(topFrame, image=audiencePole, bd=0, bg='black', cursor='hand2', activebackground='black', command=audiencePoleLifeline)
+audiencePole = PhotoImage(file='Kbc/audiencePole.png')
+audiencePolex = PhotoImage(file='Kbc/audiencePoleX.png')
+audiencePoleButton = Button(topFrame, image=audiencePole, bd=0, bg='black', cursor='hand2', activebackground='black',
+                            width=180, height=80, command=audiencePoleLifeline)
 audiencePoleButton.grid(row=0, column=1)
 
-phoneImage = PhotoImage(file='Kbc /phoneAFriend.png')
-phoneImageX = PhotoImage(file='Kbc /phoneAFriendX.png')
-phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', command=phoneLifeline)
+phoneImage = PhotoImage(file='Kbc/phoneAFriend.png')
+phoneImageX = PhotoImage(file='Kbc/phoneAFriendX.png')
+phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', width=180,
+                     height=80, command=phoneLifeline)
 phoneLifelineButton.grid(row=0, column=2)
 
-callimage = PhotoImage(file='Kbc /phone.png')
+callimage = PhotoImage(file='Kbc/phone.png')
 callButton = Button(root, bg='black', bd=0, activebackground='black', cursor='hand2', command=phoneclick)
 callButton.place(x=70, y=260)
 
-amountimage = PhotoImage(file='Kbc /Picture0.png')
-image1 = PhotoImage(file='Kbc /Picture1.png')
-image2 = PhotoImage(file='Kbc /Picture2.png')
-image3 = PhotoImage(file='Kbc /Picture3.png')
-image4 = PhotoImage(file='Kbc /Picture4.png')
-image5 = PhotoImage(file='Kbc /Picture5.png')
-image6 = PhotoImage(file='Kbc /Picture6.png')
-image7 = PhotoImage(file='Kbc /Picture7.png')
-image8 = PhotoImage(file='Kbc /Picture8.png')
-image9 = PhotoImage(file='Kbc /Picture9.png')
-image10 = PhotoImage(file='Kbc /Picture10.png')
-image11 = PhotoImage(file='Kbc /Picture11.png')
-image12 = PhotoImage(file='Kbc /Picture12.png')
-image13 = PhotoImage(file='Kbc /Picture13.png')
-image14 = PhotoImage(file='Kbc /Picture14.png')
-image15 = PhotoImage(file='Kbc /Picture15.png')
+amountimage = PhotoImage(file='Kbc/Picture0.png')
+image1 = PhotoImage(file='Kbc/Picture1.png')
+image2 = PhotoImage(file='Kbc/Picture2.png')
+image3 = PhotoImage(file='Kbc/Picture3.png')
+image4 = PhotoImage(file='Kbc/Picture4.png')
+image5 = PhotoImage(file='Kbc/Picture5.png')
+image6 = PhotoImage(file='Kbc/Picture6.png')
+image7 = PhotoImage(file='Kbc/Picture7.png')
+image8 = PhotoImage(file='Kbc/Picture8.png')
+image9 = PhotoImage(file='Kbc/Picture9.png')
+image10 = PhotoImage(file='Kbc/Picture10.png')
+image11 = PhotoImage(file='Kbc/Picture11.png')
+image12 = PhotoImage(file='Kbc/Picture12.png')
+image13 = PhotoImage(file='Kbc/Picture13.png')
+image14 = PhotoImage(file='Kbc/Picture14.png')
+image15 = PhotoImage(file='Kbc/Picture15.png')
 
 images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13
     , image14, image15]
@@ -511,7 +514,7 @@ images = [image1, image2, image3, image4, image5, image6, image7, image8, image9
 amountlabel = Label(rightFrame, image=amountimage, bg='black', bd=0)
 amountlabel.grid(row=0, column=0)
 
-layoutimage = PhotoImage(file='Kbc /lay.png')
+layoutimage = PhotoImage(file='Kbc/lay.png')
 layoutlabel = Label(bottomFrame, image=layoutimage, bg='black', bd=0)
 layoutlabel.grid(row=0, column=0)
 
@@ -525,32 +528,32 @@ questionArea.insert(END, questions[0])
 
 
 
-labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black')
+labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black', fg='white')
 labelA.place(x=60,y=110)
 
-optionButton1 = Button(bottomFrame, text=first_option[0], font=('arial', 18, 'bold'), bg='black',
-                              cursor='hand2',bd=0,activebackground='black')
+optionButton1 = Button(bottomFrame, text=first_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton1.place(x=100,y=100)
 
-labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black')
+labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black', fg='white')
 labelB.place(x=330,y=110)
 
-optionButton2 = Button(bottomFrame, text=second_option[0], font=('arial', 18, 'bold'), bg='black',
-                              cursor='hand2',bd=0,activebackground='black')
+optionButton2 = Button(bottomFrame, text=second_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton2.place(x=370,y=100)
 
-labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black')
+labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black', fg='white')
 labelC.place(x=60,y=190)
 
-optionButton3 = Button(bottomFrame, text=third_option[0], font=('arial', 18, 'bold'), bg='black',
-                             cursor='hand2',bd=0,activebackground='black')
+optionButton3 = Button(bottomFrame, text=third_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+                             cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton3.place(x=100,y=180)
 
 labelD = Label(bottomFrame, font=('arial', 16, 'bold'), text='D:', bg='black', fg='white')
 labelD.place(x=330,y=190)
 
-optionButton4 = Button(bottomFrame, text=fourth_option[0], font=('arial', 18, 'bold'), bg='black',
-                             cursor='hand2',bd=0,activebackground='black')
+optionButton4 = Button(bottomFrame, text=fourth_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+                             cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton4.place(x=370,y=180)
 
 progressbarA = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)

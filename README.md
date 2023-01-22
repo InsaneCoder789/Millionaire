@@ -17,8 +17,8 @@ A Property for Mayoor Private School
 <p> 3 . Pyttxs3 ( For Voice Modulation Control ) </p>
 
 
-<img src="Kbc /center.png" width="1000" height= "500" />
+<img src="Kbc/center.png" width="1000" height= "500" />
 
 
 <p><bold> Preview of The Game </bold> </p> 
-<img src="Kbc /KBC_Front.png"/>
+<img src="Kbc/KBC_Front.png"/>

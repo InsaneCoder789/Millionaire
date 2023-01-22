@@ -272,6 +272,11 @@ def lifeline50():
         optionButton4.config(text='')
 
 
+def asktheexpertlifeline():
+    asktheexpertLifelineButton.config(image=asktheexpertX)
+    asktheexpertLifelineButton.config(state=DISABLED) 
+
+
 def audiencePoleLifeline():
     audiencePoleButton.config(image=audiencePolex)
     audiencePoleButton.config(state=DISABLED)
@@ -471,21 +476,28 @@ logoLabel.grid(row=0, column=0)
 image50 = PhotoImage(file='Kbc/50-50.png')
 image50x = PhotoImage(file='Kbc/50-50-X.png')
 
-lifeline50Button = Button(topFrame, image=image50, bd=0, bg='black', cursor='hand2', activebackground='black', width=180,
-                      height=80, command=lifeline50)
+lifeline50Button = Button(topFrame, image=image50, bd=0, bg='black', cursor='hand2', activebackground='black', width=150,
+                      height=60, command=lifeline50)
 lifeline50Button.grid(row=0, column=0)
 
 audiencePole = PhotoImage(file='Kbc/audiencePole.png')
 audiencePolex = PhotoImage(file='Kbc/audiencePoleX.png')
 audiencePoleButton = Button(topFrame, image=audiencePole, bd=0, bg='black', cursor='hand2', activebackground='black',
-                            width=180, height=80, command=audiencePoleLifeline)
+                            width=150, height=60, command=audiencePoleLifeline)
 audiencePoleButton.grid(row=0, column=1)
 
 phoneImage = PhotoImage(file='Kbc/phoneAFriend.png')
 phoneImageX = PhotoImage(file='Kbc/phoneAFriendX.png')
-phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', width=180,
-                     height=80, command=phoneLifeline)
+phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', width=150,
+                     height=60, command=phoneLifeline)
 phoneLifelineButton.grid(row=0, column=2)
+
+asktheexpert = PhotoImage(file='Kbc/asktheexpert1.png')
+asktheexpertX = PhotoImage(file='Kbc/asktheexpert1X.png')
+asktheexpertLifelineButton = Button(topFrame, image=asktheexpert, bd=0, bg='black', cursor='hand2', activebackground='black', width=150,
+                     height=60, command=asktheexpertlifeline)
+asktheexpertLifelineButton.grid(row=0, column=3)
+
 
 callimage = PhotoImage(file='Kbc/phone.png')
 callButton = Button(root, bg='black', bd=0, activebackground='black', cursor='hand2', command=phoneclick)

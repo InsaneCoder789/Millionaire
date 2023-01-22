@@ -272,9 +272,8 @@ def lifeline50():
         optionButton4.config(text='')
 
 
-def asktheexpertlifeline():
-    asktheexpertLifelineButton.config(image=asktheexpertX)
-    asktheexpertLifelineButton.config(state=DISABLED) 
+def phoneLifeLine():
+    phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
 
 
 def audiencePoleLifeline():
@@ -429,13 +428,16 @@ def audiencePoleLifeline():
         progressbarD.config(value=80)
 
 
-def phoneLifeline():
+def asktheexpertlifeline():
     mixer.music.stop()
     mixer.music.load('calling.mp3')
     mixer.music.play()
-
-    phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
+    
+    
+    asktheexpertLifelineButton.config(image=asktheexpertX)
+    asktheexpertLifelineButton.config(state=DISABLED) 
     callButton.config(image=callimage)
+
 
 
 def phoneclick():
@@ -489,7 +491,7 @@ audiencePoleButton.grid(row=0, column=1)
 phoneImage = PhotoImage(file='Kbc/phoneAFriend.png')
 phoneImageX = PhotoImage(file='Kbc/phoneAFriendX.png')
 phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', width=150,
-                     height=60, command=phoneLifeline)
+                     height=60, command=phoneLifeLine)
 phoneLifelineButton.grid(row=0, column=2)
 
 asktheexpert = PhotoImage(file='Kbc/asktheexpert1.png')

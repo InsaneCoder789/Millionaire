@@ -3,9 +3,13 @@ from tkinter.ttk import Progressbar
 import pyttsx3
 from pygame import mixer
 
+
+kbcTune = 'kbc.mp3'
 mixer.init()
-mixer.music.load('kbc.mp3')
-mixer.music.play(-1)
+mixer.music.load(kbcTune)
+mixer.music.play()
+
+
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -173,6 +177,8 @@ def select(event):
                 root.destroy()
 
             mixer.music.stop()
+            mixer.music.load('Wronganswer.mp3')
+            mixer.music.play()
             root1 = Toplevel()
             root1.overrideredirect(True)
             root1.grab_set()

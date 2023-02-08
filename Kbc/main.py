@@ -180,7 +180,7 @@ def select(event):
                 root3.overrideredirect(True)
                 root3.grab_set()
                 root3.config(bg='black')
-                root3.geometry('350x280+100+50')
+                root3.geometry('450x320+100+50')
                 rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                 rootlabel.pack(pady=10)
                 rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')

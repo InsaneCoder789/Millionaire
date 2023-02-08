@@ -4,10 +4,10 @@ import pyttsx3
 from pygame import mixer
 
 
-kbcTune = 'kbc.mp3'
+#kbcTune = 'kbc.mp3'
 mixer.init()
-mixer.music.load(kbcTune)
-mixer.music.play()
+#mixer.music.load(kbcTune)
+#ixer.music.play(-1)
 
 
 
@@ -85,6 +85,9 @@ def select(event):
 
     progressbarD.place_forget()
     progressbarLabelD.place_forget()
+
+
+    #Correct Answers!
     for i in range(15):
         if value == correct_answers[i]:
             if value == third_option[14]:
@@ -102,6 +105,13 @@ def select(event):
                     root2.destroy()
                     mixer.music.load('kbc.mp3')
                     mixer.music.play(-1)
+
+                def disable_buttons():
+                    phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
+                    lifeline50Button.config(state=DISABLED, image=image50x)
+                    audiencePoleButton.config(state=DISABLED, image=audiencePolex)
+                    asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
+
 
                 def on_closing():
                     root2.destroy()
@@ -155,6 +165,13 @@ def select(event):
             optionButton4.config(text=fourth_option[i + 1])
             amountlabel.config(image=images[i])
 
+            for i in enumerate(questions):
+                if i == questions[-1]:
+                    disable_buttons()
+                    break
+
+
+#Wrong Answers! 
         if value not in correct_answers:
             def tryagain():
                 mixer.music.load('kbc.mp3')
@@ -162,6 +179,7 @@ def select(event):
                 phoneLifelineButton.config(state=NORMAL, image=phoneImage)
                 lifeline50Button.config(state=NORMAL, image=image50)
                 audiencePoleButton.config(state=NORMAL, image=audiencePole)
+                asktheexpertLifelineButton.config(state=NORMAL,image=asktheexpert)
 
                 questionArea.delete(1.0, END)
                 questionArea.insert(END, questions[0])
@@ -184,12 +202,14 @@ def select(event):
             root1.grab_set()
             root1.config(bg='black')
             root1.geometry('500x400+140+30')
-            root1.title('You won 0 Pound')
+            root1.title('Wrong!')
             img = PhotoImage(file='Kbc/center.png')
             imgLabel = Label(root1, image=img, bd=0)
             imgLabel.pack(pady=30)
-            loselabel = Label(root1, text='You Lose', font=('arial', 40, 'bold'), bg='black', fg='white')
+            loselabel = Label(root1, text='Wrong Answer!!', font=('arial', 40, 'bold'), bg='black', fg='white')
             loselabel.pack()
+            loselabel1 = Label(root1, text='Ask The Stall Respresentative for your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
+            loselabel1.pack()
             sadimage = PhotoImage(file='Kbc/sad.png')
             sadlabel = Label(root1, image=sadimage, bg='black')
             sadlabel.place(x=400, y=280)
@@ -211,6 +231,7 @@ def select(event):
             root1.mainloop()
 
             break
+
 
 
 def lifeline50():
@@ -438,11 +459,13 @@ def asktheexpertlifeline():
     mixer.music.stop()
     mixer.music.load('calling.mp3')
     mixer.music.play()
-    
-    
+    engine.say(f'The Expert is Waiting , Pls press the Call Icon to Listen to the Expert')
+    engine.runAndWait()
     asktheexpertLifelineButton.config(image=asktheexpertX)
     asktheexpertLifelineButton.config(state=DISABLED) 
     callButton.config(image=callimage)
+    
+    
 
 
 

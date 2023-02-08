@@ -520,6 +520,7 @@ def asktheexpertlifeline():
 
 
 def phoneclick():
+    callButton.config(state=DISABLED)
     mixer.music.load('kbc.mp3')
     mixer.music.play(-1)
     mixer.music.set_volume(0)

@@ -184,15 +184,15 @@ def select(event):
                 root3.title('The Knight!')
                 centerimg = PhotoImage(file='Kbc/center.png')
                 imgLabel = Label(root3, image=centerimg, bd=0, )
-                imgLabel.pack(pady=40)
+                imgLabel.pack(pady=20)
                 rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                 rootlabel.pack(pady=10)
-                rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 20, 'bold'), bg='black', fg='white')
+                rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')
                 rootlabel1.pack(pady=15)
-                rootlabel2 = Label(root3, text='Press Proceed to Enter Knight Mode!', font=('arial', 14, 'bold'), bg='black', fg='white')
+                rootlabel2 = Label(root3, text='Press Proceed to Enter Knight Mode!', font=('arial', 11, 'bold'), bg='black', fg='white')
                 rootlabel2.pack()
-                rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 14, 'bold'), bg='black', fg='white')
-                rootlabel3.pack(pady=10)
+                rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
+                rootlabel3.pack(pady=5)
 
                 
 
@@ -200,7 +200,7 @@ def select(event):
                                          bd=0
                                          , activebackground='black', cursor='hand2', activeforeground='white',
                                          command=knightmode)
-                okaybutton.pack(pady=5)
+                okaybutton.pack()
                 quitButton = Button(root3, text='Quit', font=('arial', 20, 'bold'), bg='black', fg='white',
                                          bd=0
                                          , activebackground='black', cursor='hand2', activeforeground='white',

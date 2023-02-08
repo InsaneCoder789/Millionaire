@@ -4,10 +4,10 @@ import pyttsx3
 from pygame import mixer
 
 
-#kbcTune = 'kbc.mp3'
+kbcTune = 'kbc.mp3'
 mixer.init()
-#mixer.music.load(kbcTune)
-#ixer.music.play(-1)
+mixer.music.load(kbcTune)
+mixer.music.play(-1)
 
 
 

@@ -175,12 +175,12 @@ def select(event):
                 root.destroy()
 
 
-            if questionArea.get(1.0, 'end-1c') == questions[1]:
+            if questionArea.get(1.0, 'end-1c') == questions[12]:
                 root3 = Toplevel()
                 root3.overrideredirect(True)
                 root3.grab_set()
                 root3.config(bg='black')
-                root3.geometry('450x320+100+50')
+                root3.geometry('450x320+140+30')
                 rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                 rootlabel.pack(pady=10)
                 rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')

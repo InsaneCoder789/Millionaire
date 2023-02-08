@@ -176,6 +176,8 @@ def select(event):
 
 
             if questionArea.get(1.0, 'end-1c') == questions[12]:
+
+
                 root3 = Toplevel()
                 root3.overrideredirect(True)
                 root3.grab_set()
@@ -238,7 +240,6 @@ def select(event):
                 root1.destroy()
 
             def on_closing():
-                root3.destroy()
                 root1.destroy()
                 root.destroy()
                 
@@ -257,7 +258,7 @@ def select(event):
             imgLabel.pack(pady=30)
             loselabel = Label(root1, text='Wrong Answer!!', font=('arial', 40, 'bold'), bg='black', fg='white')
             loselabel.pack()
-            loselabel1 = Label(root1, text='Ask The Stall Respresentative for your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
+            loselabel1 = Label(root1, text='Ask The Stall Respresentative for your prize!', font=('arial', 9, 'bold'), bg='black', fg='white')
             loselabel1.pack()
             sadimage = PhotoImage(file='Kbc/sad.png')
             sadlabel = Label(root1, image=sadimage, bg='black')

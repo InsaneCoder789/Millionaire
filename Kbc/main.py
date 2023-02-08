@@ -180,7 +180,7 @@ def select(event):
                 root3.overrideredirect(True)
                 root3.grab_set()
                 root3.config(bg='black')
-                root3.geometry('560x540+200+90')
+                root3.geometry('350x280+100+50')
                 rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                 rootlabel.pack(pady=10)
                 rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')
@@ -189,9 +189,7 @@ def select(event):
                 rootlabel2.pack()
                 rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
                 rootlabel3.pack(pady=5)
-                centerimg1 = PhotoImage(file='Kbc/center.png')
-                imgLabel1 = Label(root3, image=centerimg1, bd=0 )
-                imgLabel1.pack(pady=30)
+            
 
                 
 

@@ -106,11 +106,6 @@ def select(event):
                     mixer.music.load('kbc.mp3')
                     mixer.music.play(-1)
 
-                def disable_buttons():
-                    phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
-                    lifeline50Button.config(state=DISABLED, image=image50x)
-                    audiencePoleButton.config(state=DISABLED, image=audiencePolex)
-                    asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
 
 
                 def on_closing():
@@ -165,10 +160,65 @@ def select(event):
             optionButton4.config(text=fourth_option[i + 1])
             amountlabel.config(image=images[i])
 
-            for i in enumerate(questions):
-                if i == questions[-1]:
-                    disable_buttons()
-                    break
+            def knightmode():
+                root3.destroy()
+                mixer.music.stop()
+                mixer.music.load('KnightMusic.mp3')
+                mixer.music.play(-1)
+                phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
+                lifeline50Button.config(state=DISABLED, image=image50x)
+                audiencePoleButton.config(state=DISABLED, image=audiencePolex)
+                asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
+
+            def quitgame():
+                root3.destroy()
+                root.destroy()
+
+
+            if questionArea.get(1.0, 'end-1c') == questions[12]:
+                root3 = Toplevel()
+                root3.overrideredirect(True)
+                root3.grab_set()
+                root3.config(bg='black')
+                root3.geometry('600x540+200+90')
+                root3.title('The Knight!')
+                centerimg = PhotoImage(file='Kbc/center.png')
+                imgLabel = Label(root3, image=centerimg, bd=0, )
+                imgLabel.pack(pady=40)
+                rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
+                rootlabel.pack(pady=10)
+                rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 20, 'bold'), bg='black', fg='white')
+                rootlabel1.pack(pady=15)
+                rootlabel2 = Label(root3, text='Press Proceed to Enter Knight Mode!', font=('arial', 14, 'bold'), bg='black', fg='white')
+                rootlabel2.pack()
+                rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 14, 'bold'), bg='black', fg='white')
+                rootlabel3.pack(pady=10)
+
+                
+
+                okaybutton = Button(root3, text='Proceed', font=('arial', 20, 'bold'), bg='black', fg='white',
+                                         bd=0
+                                         , activebackground='black', cursor='hand2', activeforeground='white',
+                                         command=knightmode)
+                okaybutton.pack(pady=5)
+                quitButton = Button(root3, text='Quit', font=('arial', 20, 'bold'), bg='black', fg='white',
+                                         bd=0
+                                         , activebackground='black', cursor='hand2', activeforeground='white',
+                                         command=quitgame)
+                quitButton.pack(pady=5)
+
+            if questionArea.get(1.0, 'end-1c') == questions[13]:
+                phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
+                lifeline50Button.config(state=DISABLED, image=image50x)
+                audiencePoleButton.config(state=DISABLED, image=audiencePolex)
+                asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
+
+            if questionArea.get(1.0, 'end-1c') == questions[14]:
+                phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
+                lifeline50Button.config(state=DISABLED, image=image50x)
+                audiencePoleButton.config(state=DISABLED, image=audiencePolex)
+                asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
+
 
 
 #Wrong Answers! 
@@ -191,8 +241,10 @@ def select(event):
                 root1.destroy()
 
             def on_closing():
+                root3.destroy()
                 root1.destroy()
                 root.destroy()
+                
 
             mixer.music.stop()
             mixer.music.load('Wronganswer.mp3')

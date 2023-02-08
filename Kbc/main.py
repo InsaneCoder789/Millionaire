@@ -175,16 +175,12 @@ def select(event):
                 root.destroy()
 
 
-            if questionArea.get(1.0, 'end-1c') == questions[12]:
+            if questionArea.get(1.0, 'end-1c') == questions[1]:
                 root3 = Toplevel()
                 root3.overrideredirect(True)
                 root3.grab_set()
                 root3.config(bg='black')
-                root3.geometry('600x540+200+90')
-                root3.title('The Knight!')
-                centerimg = PhotoImage(file='Kbc/center.png')
-                imgLabel = Label(root3, image=centerimg, bd=0, )
-                imgLabel.pack(pady=20)
+                root3.geometry('560x540+200+90')
                 rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                 rootlabel.pack(pady=10)
                 rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')
@@ -193,14 +189,17 @@ def select(event):
                 rootlabel2.pack()
                 rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
                 rootlabel3.pack(pady=5)
+                centerimg1 = PhotoImage(file='Kbc/center.png')
+                imgLabel1 = Label(root3, image=centerimg1, bd=0 )
+                imgLabel1.pack(pady=30)
 
                 
 
-                okaybutton = Button(root3, text='Proceed', font=('arial', 20, 'bold'), bg='black', fg='white',
+                proceedbutton = Button(root3, text='Proceed', font=('arial', 20, 'bold'), bg='black', fg='white',
                                          bd=0
                                          , activebackground='black', cursor='hand2', activeforeground='white',
                                          command=knightmode)
-                okaybutton.pack()
+                proceedbutton.pack()
                 quitButton = Button(root3, text='Quit', font=('arial', 20, 'bold'), bg='black', fg='white',
                                          bd=0
                                          , activebackground='black', cursor='hand2', activeforeground='white',

@@ -353,6 +353,30 @@ def phoneLifeLine():
     phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
 
 
+    def okaypress():
+        root4.destroy()
+
+    
+    root4 = Toplevel()
+    root4.overrideredirect(True)
+    root4.grab_set()
+    root4.config(bg='black')
+    root4.geometry('500x400+140+30')
+    root4.title('Ask Your Friend !')
+    img1 = PhotoImage(file='Kbc/center.png')
+    imgLabel1 = Label(root4, image=img1, bd=0)
+    imgLabel1.pack(pady=30)
+    phonelabel = Label(root4, text='Ask Your Friend!', font=('arial', 10, 'bold'), bg='black', fg='white')
+    phonelabel.pack()
+    phonelabel1 = Label(root4, text='Ask your Friend or Family Member to Help you Answer the Question', font=('arial', 9, 'bold'), bg='black', fg='white')
+    phonelabel1.pack()
+    okbutton = Button(root4, text='Ok', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                                 , activebackground='black', cursor='hand2', activeforeground='white',
+                                 command=okaypress)
+    okbutton.pack()
+    
+
+
 def audiencePoleLifeline():
     audiencePoleButton.config(image=audiencePolex)
     audiencePoleButton.config(state=DISABLED)
@@ -568,8 +592,8 @@ audiencePoleButton = Button(topFrame, image=audiencePole, bd=0, bg='black', curs
                             width=150, height=60, command=audiencePoleLifeline)
 audiencePoleButton.grid(row=0, column=1)
 
-phoneImage = PhotoImage(file='Kbc/phoneAFriend.png')
-phoneImageX = PhotoImage(file='Kbc/phoneAFriendX.png')
+phoneImage = PhotoImage(file='Kbc/FriendHelp.png')
+phoneImageX = PhotoImage(file='Kbc/FriendHelpX.png')
 phoneLifelineButton = Button(topFrame, image=phoneImage, bd=0, bg='black', cursor='hand2', activebackground='black', width=150,
                      height=60, command=phoneLifeLine)
 phoneLifelineButton.grid(row=0, column=2)

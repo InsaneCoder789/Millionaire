@@ -251,7 +251,7 @@ def select(event):
             root1.overrideredirect(True)
             root1.grab_set()
             root1.config(bg='black')
-            root1.geometry('500x400+140+30')
+            root1.geometry('600x500+140+30')
             root1.title('Wrong!')
             img = PhotoImage(file='Kbc/center.png')
             imgLabel = Label(root1, image=img, bd=0)

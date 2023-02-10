@@ -44,7 +44,7 @@ third_option = ["Apparatus", "Khaman", "Giraffe", "M.P", "Sutlej", "Time", "Dies
 fourth_option = ["Application", "Dosa", "Lion", "Bihar", "Ganga"
 , "Temperature", "Petrol", "90", "X", "Nanda Devi", "Galileo Galili", "Bharat Biotech", "Keshav Dutt", "Karnataka", "James Lanraste"]
 
-correct_answers = ["Application", "Dosa", "Lion", "Vinegar and Baking Soda", "Sindhu",
+correct_answers = ["Application", "Dosa", "Lion", "U.P", "Sindhu",
  "Time", "Coal", "100", "X", "K2", "Hans Lippershey", "Serum Institute", "Balbir Singh Senior", "Andhra Pradesh", "William Hawkins"]
 
 
@@ -627,30 +627,30 @@ questionArea.insert(END, questions[0])
 labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black', fg='white')
 labelA.place(x=60,y=110)
 
-optionButton1 = Button(bottomFrame,wraplength=110, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
+optionButton1 = Button(bottomFrame,wraplength=140, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton1.place(x=100,y=100)
+optionButton1.place(x=100,y=110)
 
 labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black', fg='white')
 labelB.place(x=330,y=110)
 
-optionButton2 = Button(bottomFrame,wraplength=110, text=second_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
+optionButton2 = Button(bottomFrame,wraplength=140, text=second_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton2.place(x=370,y=100)
+optionButton2.place(x=370,y=110)
 
 labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black', fg='white')
 labelC.place(x=60,y=190)
 
-optionButton3 = Button(bottomFrame,wraplength=110,text=third_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
+optionButton3 = Button(bottomFrame,wraplength=140,text=third_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton3.place(x=100,y=180)
+optionButton3.place(x=100,y=190)
 
 labelD = Label(bottomFrame, font=('arial', 16, 'bold'), text='D:', bg='black', fg='white')
 labelD.place(x=330,y=190)
 
-optionButton4 = Button(bottomFrame,wraplength=110, text=fourth_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
+optionButton4 = Button(bottomFrame,wraplength=140, text=fourth_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton4.place(x=370,y=180)
+optionButton4.place(x=370,y=190)
 
 progressbarA = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
 

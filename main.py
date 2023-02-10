@@ -15,57 +15,37 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 
-questions = ["Which is the largest country in the world?",
-             "How many days are there in a leap year?",
-             "Which one of these four birds has the longest beak and feet?",
-             "What is the national currency of the United States of America (USA)?",
-             "Guido van Rossum in 1991 designed which language?",
-             "Finish the sequence: 9, 18, 27, _?",
-             "Which one is the first fully supported 64-bit operating system?",
-             "Which animal is called the king of the jungle?",
-             "what time corresponds to 23:23 hours ?",
-             "Which team has won most number of IPL matches ?",
-             "Which is the largest planet in our Solar system?",
-             "How many continents are there in the world?",
-             "How many years are there in one Millenium?",
-             "ipad is manufactured by?",
-             "Who founded Microsoft?"]
+questions = ["The term ‘app’, in the context of a mobile app, is a shortened version of which word ?",
+             "Which of the following is not a Gujarati snack?",
+             "Which of these animals does not have spots on their bodies in their adulthood?",
+             "Which of these combinations can be used in the science experiment to make a volcano erupt?",
+             "From which of these rivers did our country get its name ‘ India’?",
+             "The purpose of the hourglass is to measure which of these?",
+             "In India, which of the following is not a common fuel used to run cars?",
+             "At what temperature, in celsius, does water boil at sea level?",
+             "Which of these Roman numerals will have the lowest value?",
+             "Which of these mountain peaks has the greatest height above sea level?",
+             "Who actually invented the telescope in 1608?",
+             "HWhich company is the world’s largest manufacturer of vaccines by number of doses produced (volume)?",
+             "Which Indian hockey player holds the record for the most number of goals scored in an Olympic final? ",
+             "In which state did a politician named P Subash Chandra Bose become deputy chief minister in 2019?",
+             "Who commanded the ‘Hector’, the first British trading ship to land at Surat?"]
 
-first_option = ["India", "354",
-                "Heron", "Euro",
-                "Javascript", "36",
-                "Windows 7", "Elephant", "11:23PM", "KKR",
-                "Earth", "8",
-                "100 years", "Google", "Monty Ritz"]
+first_option = ["Apple", "Dhokla", "Leopard", "Vinegar and Baking Soda"
+, "Sindhu", "Weight", "CNG","95", "V", "Kanchenjunga","Johannes Kepler",
+ "Biocon", "Gurbux Singh", "Andhra Pradesh", "Paul Canning"]
 
-second_option = ["USA", "366",
-                 "Parrot", "Peso ",
-                 "Python", "34",
-                 "Linux", "Lion", "11.11PM", "CSK",
-                 "Uranus", "5",
-                 "50 years",
-                 "Microsoft", "Danis Lio"]
+second_option = ["Apparel", "Fafda", "Cheetah", "Ice and Turmeric", "Hindon"
+, "Distance", "Coal","85","L", "K2", "Nicolaus Copernicus", "Serum Institute", "Leslie Claudius", "West Bengal", "William Hawkins"]
 
-third_option = ["China", "365",
-                "Crow", "Dollar",
-                "Java", "30",
-                "Mac", "Tiger", "7:23PM", "MI",
-                "Mars", "7",
-                "500 years",
-                "Amazon", "Bill Gates"]
+third_option = ["Apparatus", "Khaman", "Giraffe", "Sugar and Water", "Sutlej", "Time", "Diesel","100"
+, "C", "Kamet", "Hans Lippershey", "Indian Immunologists", "Balbir Singh Senior", "Telangana", "Thomas Boe"]
 
-fourth_option = ["Russia", "420",
-                 "Pigeon", "Yen",
-                 "C++", "37",
-                 "Windows XP", "Cow", "9.11PM", "RCB",
-                 "Jupiter",
-                 "6",
-                 "1000 years", "Apple",
-                 "Jeff Bezos"]
+fourth_option = ["Application", "Dosa", "Lion", "Baking Powder and Oil", "Ganga"
+, "Temperature", "Petrol", "90", "X", "Nanda Devi", "Galileo Galili", "Bharat Biotech", "Keshav Dutt", "Karnataka", "James Lanraste"]
 
-correct_answers = ["Russia", "366", "Heron", "Dollar", "Python", "36",
-                   "Linux", "Lion", "7:23PM", "MI", "Jupiter", "7", "1000 years", "Apple",
-                   "Bill Gates"]
+correct_answers = ["Application", "Dosa", "Lion", "Vinegar and Baking Soda", "Sindhu",
+ "Time", "Coal", "100", "X", "K2", "Hans Lippershey", "Serum Institute", "Balbir Singh Senior", "Andhra Pradesh", "William Hawkins"]
 
 
 def select(event):
@@ -90,11 +70,12 @@ def select(event):
     #Correct Answers!
     for i in range(15):
         if value == correct_answers[i]:
-            if value == third_option[14]:
+            if value == second_option[14]:
                 def playagain():
                     phoneLifelineButton.config(state=NORMAL, image=phoneImage)
                     lifeline50Button.config(state=NORMAL, image=image50)
                     audiencePoleButton.config(state=NORMAL, image=audiencePole)
+                    asktheexpertLifelineButton.config(state=NORMAL,image=asktheexpert)
                     amountlabel.config(image=amountimage)
                     questionArea.delete(1.0, END)
                     questionArea.insert(END, questions[0])
@@ -257,12 +238,12 @@ def select(event):
             imgLabel = Label(root1, image=img, bd=0)
             imgLabel.pack(pady=30)
             loselabel = Label(root1, text='Wrong Answer!!', font=('arial', 40, 'bold'), bg='black', fg='white')
-            loselabel.pack()
+            loselabel.pack(pady=3)
             loselabel1 = Label(root1, text='Ask The Stall Respresentative for your prize!', font=('arial', 9, 'bold'), bg='black', fg='white')
             loselabel1.pack()
             sadimage = PhotoImage(file='Kbc/sad.png')
             sadlabel = Label(root1, image=sadimage, bg='black')
-            sadlabel.place(x=400, y=280)
+            sadlabel.place(x=480, y=280)
             sadlabel1 = Label(root1, image=sadimage, bg='black')
             sadlabel1.place(x=30, y=280)
 
@@ -293,12 +274,12 @@ def lifeline50():
         optionButton3.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[1]:
-        optionButton4.config(text='')
-        optionButton1.config(text='')
+        optionButton3.config(text='')
+        optionButton2.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[2]:
         optionButton3.config(text='')
-        optionButton4.config(text='')
+        optionButton2.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[3]:
         optionButton2.config(text='')
@@ -310,34 +291,34 @@ def lifeline50():
 
     if questionArea.get(1.0, 'end-1c') == questions[5]:
         optionButton2.config(text='')
-        optionButton3.config(text='')
+        optionButton4.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[6]:
         optionButton1.config(text='')
         optionButton3.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[7]:
-        optionButton3.config(text='')
+        optionButton1.config(text='')
         optionButton4.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[8]:
         optionButton2.config(text='')
-        optionButton4.config(text='')
+        optionButton1.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[9]:
         optionButton1.config(text='')
         optionButton4.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[10]:
-        optionButton1.config(text='')
-        optionButton3.config(text='')
+        optionButton2.config(text='')
+        optionButton4.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[11]:
-        optionButton1.config(text='')
-        optionButton2.config(text='')
+        optionButton3.config(text='')
+        optionButton4.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[12]:
-        optionButton1.config(text='')
+        optionButton4.config(text='')
         optionButton2.config(text='')
 
     if questionArea.get(1.0, 'end-1c') == questions[13]:
@@ -350,30 +331,27 @@ def lifeline50():
 
 
 def phoneLifeLine():
-    phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
 
 
     def okaypress():
         root4.destroy()
+        phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
 
     
     root4 = Toplevel()
     root4.overrideredirect(True)
     root4.grab_set()
     root4.config(bg='black')
-    root4.geometry('500x400+140+30')
+    root4.resizable()
     root4.title('Ask Your Friend !')
-    img_center = PhotoImage(file='Kbc/center.png')
-    imgLabel1 = Label(root4, image=img_center, bd=0)
-    imgLabel1.pack(pady=30)
-    phonelabel = Label(root4, text='Ask Your Friend!', font=('arial', 10, 'bold'), bg='black', fg='white')
-    phonelabel.pack()
+    phonelabel = Label(root4, text='Ask Your Friend!', font=('arial', 20, 'bold'), bg='black', fg='white')
+    phonelabel.pack(pady= 5)
     phonelabel1 = Label(root4, text='Ask your Friend or Family Member to Help you Answer the Question', font=('arial', 9, 'bold'), bg='black', fg='white')
-    phonelabel1.pack()
-    okbutton = Button(root4, text='Ok', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+    phonelabel1.pack(pady= 10 )
+    okbutton = Button(root4, text='OK', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
                                  , activebackground='black', cursor='hand2', activeforeground='white',
                                  command=okaypress)
-    okbutton.pack()
+    okbutton.pack(pady=5)
     
 
 
@@ -637,9 +615,9 @@ layoutlabel = Label(bottomFrame, image=layoutimage, bg='black', bd=0)
 layoutlabel.grid(row=0, column=0)
 
 
-questionArea = Text(bottomFrame, font=('arial', 18, 'bold'), bg='black', fg='white', width=34, height=2,
+questionArea = Text(bottomFrame, font=('arial', 18, 'bold'), bg='black', fg='white', width=38, height=3,
                         wrap='word',bd=0)
-questionArea.place(x=70,y=10)
+questionArea.place(x=80,y=10)
 
 questionArea.insert(END, questions[0])
 
@@ -649,28 +627,28 @@ questionArea.insert(END, questions[0])
 labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black', fg='white')
 labelA.place(x=60,y=110)
 
-optionButton1 = Button(bottomFrame, text=first_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+optionButton1 = Button(bottomFrame,wraplength=100, text=first_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton1.place(x=100,y=100)
 
 labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black', fg='white')
 labelB.place(x=330,y=110)
 
-optionButton2 = Button(bottomFrame, text=second_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+optionButton2 = Button(bottomFrame,wraplength=100, text=second_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton2.place(x=370,y=100)
 
 labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black', fg='white')
 labelC.place(x=60,y=190)
 
-optionButton3 = Button(bottomFrame, text=third_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+optionButton3 = Button(bottomFrame,wraplength=100,text=third_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton3.place(x=100,y=180)
 
 labelD = Label(bottomFrame, font=('arial', 16, 'bold'), text='D:', bg='black', fg='white')
 labelD.place(x=330,y=190)
 
-optionButton4 = Button(bottomFrame, text=fourth_option[0], font=('arial', 18, 'bold'), bg='black', fg='white',
+optionButton4 = Button(bottomFrame,wraplength=100, text=fourth_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton4.place(x=370,y=180)
 

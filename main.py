@@ -615,7 +615,7 @@ layoutlabel = Label(bottomFrame, image=layoutimage, bg='black', bd=0)
 layoutlabel.grid(row=0, column=0)
 
 
-questionArea = Text(bottomFrame, font=('arial', 18, 'bold'), bg='black', fg='white', width=38, height=3,
+questionArea = Text(bottomFrame, font=('arial', 16, 'bold'), bg='black', fg='white',width=36, height=2,
                         wrap='word',bd=0)
 questionArea.place(x=80,y=10)
 

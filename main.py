@@ -18,7 +18,7 @@ engine.setProperty('voice', voices[0].id)
 questions = ["The term ‘app’, in the context of a mobile app, is a shortened version of which word ?",
              "Which of the following is not a Gujarati snack?",
              "Which of these animals does not have spots on their bodies in their adulthood?",
-             "Which of these combinations can be used in the science experiment to make a volcano erupt?",
+             "Industrial Toxicology- Research Centre, is situated in which of the following states?",
              "From which of these rivers did our country get its name ‘ India’?",
              "The purpose of the hourglass is to measure which of these?",
              "In India, which of the following is not a common fuel used to run cars?",
@@ -31,17 +31,17 @@ questions = ["The term ‘app’, in the context of a mobile app, is a shortened
              "In which state did a politician named P Subash Chandra Bose become deputy chief minister in 2019?",
              "Who commanded the ‘Hector’, the first British trading ship to land at Surat?"]
 
-first_option = ["Apple", "Dhokla", "Leopard", "Vinegar and Baking Soda"
+first_option = ["Apple", "Dhokla", "Leopard", "U.P"
 , "Sindhu", "Weight", "CNG","95", "V", "Kanchenjunga","Johannes Kepler",
  "Biocon", "Gurbux Singh", "Andhra Pradesh", "Paul Canning"]
 
-second_option = ["Apparel", "Fafda", "Cheetah", "Ice and Turmeric", "Hindon"
+second_option = ["Apparel", "Fafda", "Cheetah", "Gujarat", "Hindon"
 , "Distance", "Coal","85","L", "K2", "Nicolaus Copernicus", "Serum Institute", "Leslie Claudius", "West Bengal", "William Hawkins"]
 
-third_option = ["Apparatus", "Khaman", "Giraffe", "Sugar and Water", "Sutlej", "Time", "Diesel","100"
+third_option = ["Apparatus", "Khaman", "Giraffe", "M.P", "Sutlej", "Time", "Diesel","100"
 , "C", "Kamet", "Hans Lippershey", "Indian Immunologists", "Balbir Singh Senior", "Telangana", "Thomas Boe"]
 
-fourth_option = ["Application", "Dosa", "Lion", "Baking Powder and Oil", "Ganga"
+fourth_option = ["Application", "Dosa", "Lion", "Bihar", "Ganga"
 , "Temperature", "Petrol", "90", "X", "Nanda Devi", "Galileo Galili", "Bharat Biotech", "Keshav Dutt", "Karnataka", "James Lanraste"]
 
 correct_answers = ["Application", "Dosa", "Lion", "Vinegar and Baking Soda", "Sindhu",
@@ -627,28 +627,28 @@ questionArea.insert(END, questions[0])
 labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black', fg='white')
 labelA.place(x=60,y=110)
 
-optionButton1 = Button(bottomFrame,wraplength=100, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
+optionButton1 = Button(bottomFrame,wraplength=110, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton1.place(x=100,y=100)
 
 labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black', fg='white')
 labelB.place(x=330,y=110)
 
-optionButton2 = Button(bottomFrame,wraplength=100, text=second_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
+optionButton2 = Button(bottomFrame,wraplength=110, text=second_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton2.place(x=370,y=100)
 
 labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black', fg='white')
 labelC.place(x=60,y=190)
 
-optionButton3 = Button(bottomFrame,wraplength=100,text=third_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
+optionButton3 = Button(bottomFrame,wraplength=110,text=third_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton3.place(x=100,y=180)
 
 labelD = Label(bottomFrame, font=('arial', 16, 'bold'), text='D:', bg='black', fg='white')
 labelD.place(x=330,y=190)
 
-optionButton4 = Button(bottomFrame,wraplength=100, text=fourth_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
+optionButton4 = Button(bottomFrame,wraplength=110, text=fourth_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton4.place(x=370,y=180)
 

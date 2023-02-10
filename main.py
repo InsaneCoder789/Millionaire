@@ -371,7 +371,7 @@ def audiencePoleLifeline():
     progressbarD.place(x=700, y=190)
     progressbarLabelD.place(x=700, y=320)
 
-    if questionArea.get(1.0, 'end-1c') == questions[0]:
+    if questionArea.get(1.0, 'end-1c') == questions[0]: #Question 1 Poll
         progressbarA.config(value=30)
 
         progressbarB.config(value=60)
@@ -380,52 +380,52 @@ def audiencePoleLifeline():
 
         progressbarD.config(value=90)
 
-    if questionArea.get(1.0, 'end-1c') == questions[1]:
+    if questionArea.get(1.0, 'end-1c') == questions[1]: #Question 2 Poll
         progressbarA.config(value=30)
 
-        progressbarB.config(value=80)
+        progressbarB.config(value=50)
 
         progressbarC.config(value=40)
 
-        progressbarD.config(value=30)
+        progressbarD.config(value=80)
 
-    if questionArea.get(1.0, 'end-1c') == questions[2]:
-        progressbarA.config(value=80)
+    if questionArea.get(1.0, 'end-1c') == questions[2]: #Question 3 Poll 
+        progressbarA.config(value=70)
 
         progressbarB.config(value=60)
 
         progressbarC.config(value=50)
 
-        progressbarD.config(value=70)
+        progressbarD.config(value=90)
 
     if questionArea.get(1.0, 'end-1c') == questions[3]:
-        progressbarA.config(value=30)
+        progressbarA.config(value=90)
 
         progressbarB.config(value=70)
 
-        progressbarC.config(value=90)
+        progressbarC.config(value=30)
 
         progressbarD.config(value=50)
 
     if questionArea.get(1.0, 'end-1c') == questions[4]:
-        progressbarA.config(value=30)
+        progressbarA.config(value=80)
 
-        progressbarB.config(value=80)
+        progressbarB.config(value=20)
 
         progressbarC.config(value=40)
 
         progressbarD.config(value=30)
 
     if questionArea.get(1.0, 'end-1c') == questions[5]:
-        progressbarA.config(value=80)
+        progressbarA.config(value=40)
 
         progressbarB.config(value=10)
 
-        progressbarC.config(value=40)
+        progressbarC.config(value=80)
 
         progressbarD.config(value=30)
 
-    if questionArea.get(1.0, 'end-1c') == questions[6]:
+    if questionArea.get(1.0, 'end-1c') == questions[6]: #Done 
         progressbarA.config(value=30)
 
         progressbarB.config(value=80)
@@ -437,27 +437,27 @@ def audiencePoleLifeline():
     if questionArea.get(1.0, 'end-1c') == questions[7]:
         progressbarA.config(value=10)
 
-        progressbarB.config(value=70)
+        progressbarB.config(value=20)
 
-        progressbarC.config(value=50)
+        progressbarC.config(value=70)
 
         progressbarD.config(value=30)
 
     if questionArea.get(1.0, 'end-1c') == questions[8]:
-        progressbarA.config(value=90)
+        progressbarA.config(value=20)
 
-        progressbarB.config(value=80)
+        progressbarB.config(value=85)
 
         progressbarC.config(value=70)
 
-        progressbarD.config(value=20)
+        progressbarD.config(value=90)
 
     if questionArea.get(1.0, 'end-1c') == questions[9]:
         progressbarA.config(value=30)
 
-        progressbarB.config(value=50)
+        progressbarB.config(value=70)
 
-        progressbarC.config(value=70)
+        progressbarC.config(value=50)
 
         progressbarD.config(value=60)
 
@@ -466,16 +466,16 @@ def audiencePoleLifeline():
 
         progressbarB.config(value=20)
 
-        progressbarC.config(value=50)
+        progressbarC.config(value=70)
 
-        progressbarD.config(value=70)
+        progressbarD.config(value=50)
 
     if questionArea.get(1.0, 'end-1c') == questions[11]:
         progressbarA.config(value=30)
 
-        progressbarB.config(value=80)
+        progressbarB.config(value=90)
 
-        progressbarC.config(value=90)
+        progressbarC.config(value=70)
 
         progressbarD.config(value=40)
 
@@ -484,12 +484,12 @@ def audiencePoleLifeline():
 
         progressbarB.config(value=60)
 
-        progressbarC.config(value=50)
+        progressbarC.config(value=100)
 
-        progressbarD.config(value=80)
+        progressbarD.config(value=10)
 
     if questionArea.get(1.0, 'end-1c') == questions[13]:
-        progressbarA.config(value=60)
+        progressbarA.config(value=100)
 
         progressbarB.config(value=35)
 
@@ -500,7 +500,7 @@ def audiencePoleLifeline():
     if questionArea.get(1.0, 'end-1c') == questions[14]:
         progressbarA.config(value=60)
 
-        progressbarB.config(value=65)
+        progressbarB.config(value=115)
 
         progressbarC.config(value=90)
 
@@ -629,28 +629,28 @@ labelA.place(x=60,y=110)
 
 optionButton1 = Button(bottomFrame,wraplength=140, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton1.place(x=100,y=110)
+optionButton1.place(x=100,y=105)
 
 labelB = Label(bottomFrame, font=('arial', 16, 'bold'), text='B:', bg='black', fg='white')
 labelB.place(x=330,y=110)
 
 optionButton2 = Button(bottomFrame,wraplength=140, text=second_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton2.place(x=370,y=110)
+optionButton2.place(x=370,y=105)
 
 labelC = Label(bottomFrame, font=('arial', 16, 'bold'), text='C:', bg='black', fg='white')
 labelC.place(x=60,y=190)
 
 optionButton3 = Button(bottomFrame,wraplength=140,text=third_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton3.place(x=100,y=190)
+optionButton3.place(x=100,y=185)
 
 labelD = Label(bottomFrame, font=('arial', 16, 'bold'), text='D:', bg='black', fg='white')
 labelD.place(x=330,y=190)
 
 optionButton4 = Button(bottomFrame,wraplength=140, text=fourth_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                              cursor='hand2',bd=0,activebackground='black',activeforeground='white')
-optionButton4.place(x=370,y=190)
+optionButton4.place(x=370,y=185)
 
 progressbarA = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
 

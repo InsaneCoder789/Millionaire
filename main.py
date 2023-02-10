@@ -627,7 +627,7 @@ questionArea.insert(END, questions[0])
 labelA = Label(bottomFrame, font=('arial', 16, 'bold'), text='A:', bg='black', fg='white')
 labelA.place(x=60,y=110)
 
-optionButton1 = Button(bottomFrame,wraplength=100, text=first_option[0], font=('arial', 16, 'bold'),height=3,width=10, bg='black', fg='white',
+optionButton1 = Button(bottomFrame,wraplength=100, text=first_option[0], font=('arial', 16, 'bold'),height=1, bg='black', fg='white',
                               cursor='hand2',bd=0,activebackground='black',activeforeground='white')
 optionButton1.place(x=100,y=100)
 

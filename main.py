@@ -379,15 +379,12 @@ def startgame():
         ll50_screenroot.after(2000,lifeline50_initiate)
         screen_width = ll50_screenroot.winfo_screenwidth()
         screen_height = ll50_screenroot.winfo_screenheight()
-        window_width = 200
-        window_height = 300
+        window_width = 100
+        window_height = 50
         x = (screen_width/2) - (window_width/2)
         y = (screen_height/2) - (window_height/2)
         ll50_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-        ll50_screenroot.title('Wrong!')
-        img = PhotoImage(file='Kbc/.png')
-        imgLabel = Label(ll50_screenroot, image=img, bd=0)
-        imgLabel.pack(pady=30)
+        ll50_screenroot.title('Lifeline')
         ll50label = Label(ll50_screenroot, text='initiating.', font=('arial', 12), bg='black', fg='white')
         ll50label.pack(pady=3)
         time.sleep(1)
@@ -437,17 +434,17 @@ def startgame():
             audiencePoleButton.config(image=audiencePolex)
             audiencePoleButton.config(state=DISABLED)
 
-            progressbarA.place(x=580, y=190)
-            progressbarLabelA.place(x=580, y=320)
+            progressbarA.place(x=600, y=190)
+            progressbarLabelA.place(x=600, y=320)
 
-            progressbarB.place(x=620, y=190)
-            progressbarLabelB.place(x=620, y=320)
+            progressbarB.place(x=640, y=190)
+            progressbarLabelB.place(x=640, y=320)
 
-            progressbarC.place(x=660, y=190)
-            progressbarLabelC.place(x=660, y=320)
+            progressbarC.place(x=680, y=190)
+            progressbarLabelC.place(x=680, y=320)
 
-            progressbarD.place(x=700, y=190)
-            progressbarLabelD.place(x=700, y=320)
+            progressbarD.place(x=720, y=190)
+            progressbarLabelD.place(x=720, y=320)
 
             if questionArea.get(1.0, 'end-1c') == questions[0]: #Question 1 Poll
                 progressbarA.config(value=30)
@@ -593,15 +590,12 @@ def startgame():
         ll_screenroot.after(2000,audiencepoleLifeline_initiate)
         screen_width = ll_screenroot.winfo_screenwidth()
         screen_height = ll_screenroot.winfo_screenheight()
-        window_width = 200
-        window_height = 300
+        window_width = 100
+        window_height = 50
         x = (screen_width/2) - (window_width/2)
         y = (screen_height/2) - (window_height/2)
         ll_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
         ll_screenroot.title('Lifeline')
-        img = PhotoImage(file='Kbc/.png')
-        imgLabel = Label(ll_screenroot, image=img, bd=0)
-        imgLabel.pack(pady=30)
         ll50label = Label(ll_screenroot, text='initiating.', font=('arial', 12), bg='black', fg='white')
         ll50label.pack(pady=3)
         time.sleep(1)

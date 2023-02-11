@@ -183,7 +183,7 @@ def startgame():
                     restart()
 
 
-                if questionArea.get(1.0, 'end-1c') == questions[1]:
+                if questionArea.get(1.0, 'end-1c') == questions[12]:
 
 
                     knightmode_root = Toplevel()

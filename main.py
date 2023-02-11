@@ -32,7 +32,7 @@ def startgame():
                 "Which of these Roman numerals will have the lowest value?",
                 "Which of these mountain peaks has the greatest height above sea level?",
                 "Who actually invented the telescope in 1608?",
-                "HWhich company is the world’s largest manufacturer of vaccines by number of doses produced (volume)?",
+                "Which company is the world’s largest manufacturer of vaccines by number of doses produced (volume)?",
                 "Which Indian hockey player holds the record for the most number of goals scored in an Olympic final? ",
                 "In which state did a politician named P Subash Chandra Bose become deputy chief minister in 2019?",
                 "Who commanded the ‘Hector’, the first British trading ship to land at Surat?"]
@@ -45,7 +45,7 @@ def startgame():
     , "Distance", "Coal","85","L", "K2", "Nicolaus Copernicus", "Serum Institute", "Leslie Claudius", "West Bengal", "William Hawkins"]
 
     third_option = ["Apparatus", "Khaman", "Giraffe", "M.P", "Sutlej", "Time", "Diesel","100"
-    , "C", "Kamet", "Hans Lippershey", "Indian Immunologists", "Balbir Singh Senior", "Telangana", "Thomas Boe"]
+    , "C", "Kamet", "Hans Lippershey", "Indian Immuno", "Balbir Singh Senior", "Telangana", "Thomas Boe"]
 
     fourth_option = ["Application", "Dosa", "Lion", "Bihar", "Ganga"
     , "Temperature", "Petrol", "90", "X", "Nanda Devi", "Galileo Galili", "Bharat Biotech", "Keshav Dutt", "Karnataka", "James Lanraste"]
@@ -56,24 +56,24 @@ def startgame():
     #
 
     def restart():
-                    startroot.__init__()
-                    screen_width = startroot.winfo_screenwidth()
-                    screen_height = startroot.winfo_screenheight()
+                    start_root.__init__()
+                    screen_width = start_root.winfo_screenwidth()
+                    screen_height = start_root.winfo_screenheight()
                     window_width = 635
                     window_height = 326
                     x = (screen_width/2) - (window_width/2)
                     y = (screen_height/2) - (window_height/2)
-                    startroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-                    startroot.resizable(0, 0)
-                    startroot.title('Millionaire Game')
-                    startroot.config(bg='black')
+                    start_root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+                    start_root.resizable(0, 0)
+                    start_root.title('Millionaire Game')
+                    start_root.config(bg='black')
                     centerimg = PhotoImage(file='Kbc/center.png')
-                    imgLabel = Label(startroot, image=centerimg, bd=0, )
+                    imgLabel = Label(start_root, image=centerimg, bd=0, )
                     imgLabel.pack(pady=30)
-                    startbutton = Button(startroot, text='Start', font=('arial', 20, 'bold'), bg='black', fg='white',bd=0
+                    startbutton = Button(start_root, text='Start', font=('arial', 20, 'bold'), bg='black', fg='white',bd=0
                                                                 , activebackground='black', cursor='hand2', activeforeground='white',command=startgame)
                     startbutton.pack()
-                    startroot.mainloop()
+                    start_root.mainloop()
 
 
 
@@ -101,54 +101,60 @@ def startgame():
             if value == correct_answers[i]:
                 if value == second_option[14]:
                     def playagain():
-                        root2.destroy()
-                        root.destroy()
+                        win_screenroot.destroy()
+                        main_root.destroy()
                         restart()
 
 
 
                     def on_closing():
-                        root2.destroy()
-                        root.destroy()
+                        win_screenroot.destroy()
+                        main_root.destroy()
                         restart()
 
                     amountlabel.config(image=image15)
                     mixer.music.stop()
                     mixer.music.load('Kbcwon.mp3')
                     mixer.music.play()
-                    root2 = Toplevel()
-                    root2.overrideredirect(True)
-                    root2.grab_set()
-                    root2.config(bg='black')
-                    root2.geometry('500x400+140+30')
-                    root2.title('You won 1 million Pounds')
+                    win_screenroot = Toplevel()
+                    win_screenroot.overrideredirect(True)
+                    win_screenroot.grab_set()
+                    win_screenroot.config(bg='black')
+                    screen_width = win_screenroot.winfo_screenwidth()
+                    screen_height = win_screenroot.winfo_screenheight()
+                    window_width = 500
+                    window_height = 400
+                    x = (screen_width/2) - (window_width/2)
+                    y = (screen_height/2) - (window_height/2)
+                    win_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+                    win_screenroot.title('Winner!!!')
                     centerimg = PhotoImage(file='Kbc/center.png')
-                    imgLabel = Label(root2, image=centerimg, bd=0, )
+                    imgLabel = Label(win_screenroot, image=centerimg, bd=0, )
                     imgLabel.pack(pady=30)
 
-                    winlabel = Label(root2, text='You Won', font=('arial', 40, 'bold'), bg='black', fg='white')
+                    winlabel = Label(win_screenroot, text='You Won!', font=('arial', 40, 'bold'), bg='black', fg='white')
                     winlabel.pack()
 
                     happyimage = PhotoImage(file='Kbc/happy.png')
-                    happYLabel = Label(root2, image=happyimage, bg='black')
+                    happYLabel = Label(win_screenroot, image=happyimage, bg='black')
                     happYLabel.place(x=400, y=280)
 
-                    happYLabel1 = Label(root2, image=happyimage, bg='black')
+                    happYLabel1 = Label(win_screenroot, image=happyimage, bg='black')
                     happYLabel1.place(x=30, y=280)
 
-                    playagainButton = Button(root2, text='Play Again', font=('arial', 20, 'bold'), bg='black', fg='white',
+                    playagainButton = Button(win_screenroot, text='Play Again', font=('arial', 20, 'bold'), bg='black', fg='white',
                                             bd=0
                                             , activebackground='black', cursor='hand2', activeforeground='white',
                                             command=playagain)
                     playagainButton.pack()
 
-                    closeButton = Button(root2, text='Close', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                    closeButton = Button(win_screenroot, text='Close', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
                                         , activebackground='black', cursor='hand2', activeforeground='white',
                                         command=on_closing)
                     closeButton.pack()
 
-                    root2.protocol('WM_DELETE_WINDOW', on_closing)
-                    root2.mainloop()
+                    win_screenroot.protocol('WM_DELETE_WINDOW', on_closing)
+                    win_screenroot.mainloop()
                     break
 
                 questionArea.delete(1.0, END)
@@ -161,7 +167,7 @@ def startgame():
                 amountlabel.config(image=images[i])
 
                 def knightmode():
-                    root3.destroy()
+                    knightmode_root.destroy()
                     mixer.music.stop()
                     mixer.music.load('KnightMusic.mp3')
                     mixer.music.play(-1)
@@ -171,47 +177,54 @@ def startgame():
                     asktheexpertLifelineButton.config(state=DISABLED,image=asktheexpertX)
 
                 def quitgame():
-                    root3.destroy()
-                    root.destroy()
+                    knightmode_root.destroy()
+                    main_root.destroy()
+                    restart()
 
 
-                if questionArea.get(1.0, 'end-1c') == questions[12]:
+                if questionArea.get(1.0, 'end-1c') == questions[1]:
 
 
-                    root3 = Toplevel()
-                    root3.overrideredirect(True)
-                    root3.grab_set()
-                    root3.config(bg='black')
-                    screen_width = root3.winfo_screenwidth()
-                    screen_height = root3.winfo_screenheight()
-                    window_width = 450
-                    window_height = 320
+                    knightmode_root = Toplevel()
+                    knightmode_root.overrideredirect(True)
+                    knightmode_root.grab_set()
+                    knightmode_root.config(bg='black')
+                    screen_width = knightmode_root.winfo_screenwidth()
+                    screen_height = knightmode_root.winfo_screenheight()
+                    window_width = 650
+                    window_height = 600
                     x = (screen_width/2) - (window_width/2)
                     y = (screen_height/2) - (window_height/2)
-                    root3.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-                    rootlabel = Label(root3, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
+                    knightmode_root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+                    rootlabel = Label(knightmode_root, text='KNIGHT MODE', font=('arial', 30, 'bold'), bg='black', fg='white')
                     rootlabel.pack(pady=10)
-                    rootlabel1 = Label(root3, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')
+                    centerimg = PhotoImage(file='Kbc/center.png')
+                    imgLabel = Label(knightmode_root, image=centerimg, bd=0, )
+                    imgLabel.pack(pady=30)
+                    rootlabel1 = Label(knightmode_root, text='The Next 3 Questions will not have any lifeline!', font=('arial', 15, 'bold'), bg='black', fg='white')
                     rootlabel1.pack(pady=15)
-                    rootlabel2 = Label(root3, text='Press Proceed to Enter Knight Mode!', font=('arial', 11, 'bold'), bg='black', fg='white')
+                    rootlabel2 = Label(knightmode_root, text='Press Proceed to Enter Knight Mode!', font=('arial', 11, 'bold'), bg='black', fg='white')
                     rootlabel2.pack()
-                    rootlabel3 = Label(root3, text='Press Quit to End the game here and collect your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
+                    rootlabel3 = Label(knightmode_root, text='Press Quit to End the game here and collect your prize!', font=('arial', 11, 'bold'), bg='black', fg='white')
                     rootlabel3.pack(pady=5)
+                    rootlabel3 = Label(knightmode_root, text='Proceed at your risk.. It will result in the loss of the prize attained earlier!', font=('arial', 8, 'bold'), bg='black', fg='white')
+                    rootlabel3.pack(pady=5)
+
                 
 
                     
 
-                    proceedbutton = Button(root3, text='Proceed', font=('arial', 20, 'bold'), bg='black', fg='white',
+                    proceedbutton = Button(knightmode_root, text='Proceed', font=('arial', 20, 'bold'), bg='black', fg='white',
                                             bd=0
                                             , activebackground='black', cursor='hand2', activeforeground='white',
                                             command=knightmode)
                     proceedbutton.pack()
-                    quitButton = Button(root3, text='Quit', font=('arial', 20, 'bold'), bg='black', fg='white',
+                    quitButton = Button(knightmode_root, text='Quit', font=('arial', 20, 'bold'), bg='black', fg='white',
                                             bd=0
                                             , activebackground='black', cursor='hand2', activeforeground='white',
                                             command=quitgame)
                     quitButton.pack(pady=5)
-                    root3.mainloop()
+                    knightmode_root.mainloop()
 
                 if questionArea.get(1.0, 'end-1c') == questions[13]:
                     phoneLifelineButton.config(state=DISABLED, image=phoneImageX)
@@ -231,58 +244,58 @@ def startgame():
             if value not in correct_answers:
 
                 def tryagain():                
-                    root1.destroy()
-                    root.destroy()
+                    lose_screenroot.destroy()
+                    main_root.destroy()
                     restart()
 
 
                 def on_closing():
-                    root1.destroy()
-                    root.destroy()
+                    lose_screenroot.destroy()
+                    main_root.destroy()
                     restart()
                     
 
                 mixer.music.stop()
                 mixer.music.load('Wronganswer.mp3')
                 mixer.music.play()
-                root1 = Toplevel()
-                root1.overrideredirect(True)
-                root1.grab_set()
-                root1.config(bg='black')
-                screen_width = root1.winfo_screenwidth()
-                screen_height = root1.winfo_screenheight()
+                lose_screenroot = Toplevel()
+                lose_screenroot.overrideredirect(True)
+                lose_screenroot.grab_set()
+                lose_screenroot.config(bg='black')
+                screen_width = lose_screenroot.winfo_screenwidth()
+                screen_height = lose_screenroot.winfo_screenheight()
                 window_width = 600
                 window_height = 500
                 x = (screen_width/2) - (window_width/2)
                 y = (screen_height/2) - (window_height/2)
-                root1.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-                root1.title('Wrong!')
+                lose_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+                lose_screenroot.title('Wrong!')
                 img = PhotoImage(file='Kbc/center.png')
-                imgLabel = Label(root1, image=img, bd=0)
+                imgLabel = Label(lose_screenroot, image=img, bd=0)
                 imgLabel.pack(pady=30)
-                loselabel = Label(root1, text='Wrong Answer!!', font=('arial', 40, 'bold'), bg='black', fg='white')
+                loselabel = Label(lose_screenroot, text='Wrong Answer!!', font=('arial', 40, 'bold'), bg='black', fg='white')
                 loselabel.pack(pady=3)
-                loselabel1 = Label(root1, text='Ask The Stall Respresentative for your prize!', font=('arial', 9, 'bold'), bg='black', fg='white')
+                loselabel1 = Label(lose_screenroot, text='Ask The Stall Respresentative for your prize!', font=('arial', 9, 'bold'), bg='black', fg='white')
                 loselabel1.pack()
                 sadimage = PhotoImage(file='Kbc/sad.png')
-                sadlabel = Label(root1, image=sadimage, bg='black')
-                sadlabel.place(x=480, y=280)
-                sadlabel1 = Label(root1, image=sadimage, bg='black')
-                sadlabel1.place(x=30, y=280)
+                sadlabel = Label(lose_screenroot, image=sadimage, bg='black')
+                sadlabel.place(x=510, y=300)
+                sadlabel1 = Label(lose_screenroot, image=sadimage, bg='black')
+                sadlabel1.place(x=20, y=300)
 
-                tryagainButton = Button(root1, text='Try Again', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                tryagainButton = Button(lose_screenroot, text='Try Again', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
                                         , activebackground='black', cursor='hand2', activeforeground='white',
                                         command=tryagain)
                 tryagainButton.pack()
 
-                closeButton = Button(root1, text='Close', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+                closeButton = Button(lose_screenroot, text='Close', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
                                     , activebackground='black', cursor='hand2', activeforeground='white',
                                     command=on_closing)
                 closeButton.pack()
 
-                root1.protocol('WM_DELETE_WINDOW', on_closing)
+                lose_screenroot.protocol('WM_DELETE_WINDOW', on_closing)
 
-                root1.mainloop()
+                lose_screenroot.mainloop()
 
                 break
 
@@ -357,32 +370,35 @@ def startgame():
 
 
         def okaypress():
-            root4.destroy()
+            phonelifeline_root.destroy()
             phoneLifelineButton.config(image=phoneImageX, state=DISABLED)
 
         
-        root4 = Toplevel()
-        root4.overrideredirect(True)
-        root4.grab_set()
-        root4.config(bg='black')
-        screen_width = root4.winfo_screenwidth()
-        screen_height = root4.winfo_screenheight()
+        phonelifeline_root = Toplevel()
+        phonelifeline_root.overrideredirect(True)
+        phonelifeline_root.grab_set()
+        phonelifeline_root.config(bg='black')
+        screen_width = phonelifeline_root.winfo_screenwidth()
+        screen_height = phonelifeline_root.winfo_screenheight()
         window_width = 300
-        window_height = 150
+        window_height = 250
         x = (screen_width/2) - (window_width/2)
         y = (screen_height/2) - (window_height/2)
-        root4.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-        root4.resizable()
-        root4.title('Ask Your Friend !')
-        phonelabel = Label(root4, text='Ask Your Friend!', font=('arial', 20, 'bold'), bg='black', fg='white')
+        phonelifeline_root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+        phonelifeline_root.resizable()
+        phonelifeline_root.title('Ask Your Friend !')
+        callingimage = PhotoImage(file='Kbc/phoneAFriend.png')
+        callinglabel = Label(phonelifeline_root, image=callingimage, bg='black')
+        callinglabel.pack(pady=10)
+        phonelabel = Label(phonelifeline_root, text='Ask Your Friend!', font=('arial', 20, 'bold'), bg='black', fg='white')
         phonelabel.pack(pady= 5)
-        phonelabel1 = Label(root4, text='Ask your Friend or Family Member to Help you Answer the Question', font=('arial', 9, 'bold'), bg='black', fg='white')
+        phonelabel1 = Label(phonelifeline_root, text='Ask your Friend or Family Member to Help you Answer the Question', font=('arial', 6, 'bold'), bg='black', fg='white')
         phonelabel1.pack(pady= 10 )
-        okbutton = Button(root4, text='OK', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
+        okbutton = Button(phonelifeline_root, text='OK', font=('arial', 20, 'bold'), bg='black', fg='white', bd=0
                                     , activebackground='black', cursor='hand2', activeforeground='white',
                                     command=okaypress)
         okbutton.pack(pady=5)
-        root4.mainloop()
+        phonelifeline_root.mainloop()
         
 
 
@@ -564,24 +580,24 @@ def startgame():
 
 
 
-    startroot.destroy()
+    start_root.destroy()
 
-    root = Tk()
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
+    main_root = Tk()
+    screen_width = main_root.winfo_screenwidth()
+    screen_height = main_root.winfo_screenheight()
     window_width = 1270
     window_height = 652
     x = (screen_width/2) - (window_width/2)
     y = (screen_height/2) - (window_height/2)
-    root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-    root.resizable(0, 0)
-    root.title('Millionaire Game')
-    root.config(bg='black')
+    main_root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+    main_root.resizable(0, 0)
+    main_root.title('Millionaire Game')
+    main_root.config(bg='black')
 
-    leftFrame = Frame(root, bg='black', padx=90)
+    leftFrame = Frame(main_root, bg='black', padx=90)
     leftFrame.grid(row=0, column=0)
 
-    rightFrame = Frame(root, bg='black', padx=50, pady=25)
+    rightFrame = Frame(main_root, bg='black', padx=50, pady=25)
     rightFrame.grid(row=0, column=1)
 
     topFrame = Frame(leftFrame, bg='black', pady=15)
@@ -624,7 +640,7 @@ def startgame():
 
 
     callimage = PhotoImage(file='Kbc/phone.png')
-    callButton = Button(root, bg='black', bd=0, activebackground='black', cursor='hand2', command=phoneclick)
+    callButton = Button(main_root, bg='black', bd=0, activebackground='black', cursor='hand2', command=phoneclick)
     callButton.place(x=70, y=260)
 
     amountimage = PhotoImage(file='Kbc/Picture0.png')
@@ -692,47 +708,47 @@ def startgame():
                                 cursor='hand2',bd=0,activebackground='black',activeforeground='white')
     optionButton4.place(x=370,y=185)
 
-    progressbarA = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
+    progressbarA = Progressbar(main_root, orient=VERTICAL, mode='determinate', length=120)
 
-    progressbarLabelA = Label(root, text='A', font=('arial', 20, 'bold'), bg='black', fg='white')
+    progressbarLabelA = Label(main_root, text='A', font=('arial', 20, 'bold'), bg='black', fg='white')
 
-    progressbarB = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
+    progressbarB = Progressbar(main_root, orient=VERTICAL, mode='determinate', length=120)
 
-    progressbarLabelB = Label(root, text='B', font=('arial', 20, 'bold'), bg='black', fg='white')
+    progressbarLabelB = Label(main_root, text='B', font=('arial', 20, 'bold'), bg='black', fg='white')
 
-    progressbarC = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
+    progressbarC = Progressbar(main_root, orient=VERTICAL, mode='determinate', length=120)
 
-    progressbarLabelC = Label(root, text='C', font=('arial', 20, 'bold'), bg='black', fg='white')
+    progressbarLabelC = Label(main_root, text='C', font=('arial', 20, 'bold'), bg='black', fg='white')
 
-    progressbarD = Progressbar(root, orient=VERTICAL, mode='determinate', length=120)
+    progressbarD = Progressbar(main_root, orient=VERTICAL, mode='determinate', length=120)
 
-    progressbarLabelD = Label(root, text='D', font=('arial', 20, 'bold'), bg='black', fg='white')
+    progressbarLabelD = Label(main_root, text='D', font=('arial', 20, 'bold'), bg='black', fg='white')
 
     optionButton1.bind('<Button-1>', select)
     optionButton2.bind('<Button-1>', select)
     optionButton3.bind('<Button-1>', select)
     optionButton4.bind('<Button-1>', select)
 
-    root.mainloop()
+    main_root.mainloop()
 
     
 
 
-startroot = Tk()
-startroot.resizable(0, 0)
-startroot.title('Millionaire Game')
-screen_width = startroot.winfo_screenwidth()
-screen_height = startroot.winfo_screenheight()
+start_root = Tk()
+start_root.resizable(0, 0)
+start_root.title('Millionaire Game')
+screen_width = start_root.winfo_screenwidth()
+screen_height = start_root.winfo_screenheight()
 window_width = 635
 window_height = 326
 x = (screen_width/2) - (window_width/2)
 y = (screen_height/2) - (window_height/2)
-startroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
-startroot.config(bg='black')
+start_root.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+start_root.config(bg='black')
 centerimg = PhotoImage(file='Kbc/center.png')
-imgLabel = Label(startroot, image=centerimg, bd=0, )
+imgLabel = Label(start_root, image=centerimg, bd=0, )
 imgLabel.pack(pady=30)
-startbutton = Button(startroot, text='Start', font=('arial', 20, 'bold'), bg='black', fg='white',bd=0
+startbutton = Button(start_root, text='Start', font=('arial', 20, 'bold'), bg='black', fg='white',bd=0
                                             , activebackground='black', cursor='hand2', activeforeground='white',command=startgame)
 startbutton.pack()
-startroot.mainloop()
+start_root.mainloop()

@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter.ttk import Progressbar
 import pyttsx3
 from pygame import mixer
+import time 
 
 
 
@@ -302,68 +303,95 @@ def startgame():
 
 
     def lifeline50():
-        lifeline50Button.config(image=image50x)
-        lifeline50Button.config(state=DISABLED)
 
-        if questionArea.get(1.0, 'end-1c') == questions[0]:
-            optionButton1.config(text='')
-            optionButton3.config(text='')
+        def lifeline50_initiate():
+            lifeline50Button.config(image=image50x)
+            lifeline50Button.config(state=DISABLED)
+            ll50_screenroot.destroy()
 
-        if questionArea.get(1.0, 'end-1c') == questions[1]:
-            optionButton3.config(text='')
-            optionButton2.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[0]:
+                optionButton1.config(text='')
+                optionButton3.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[2]:
-            optionButton3.config(text='')
-            optionButton2.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[1]:
+                optionButton3.config(text='')
+                optionButton2.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[3]:
-            optionButton2.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[2]:
+                optionButton3.config(text='')
+                optionButton2.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[4]:
-            optionButton3.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[3]:
+                optionButton2.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[5]:
-            optionButton2.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[4]:
+                optionButton3.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[6]:
-            optionButton1.config(text='')
-            optionButton3.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[5]:
+                optionButton2.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[7]:
-            optionButton1.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[6]:
+                optionButton1.config(text='')
+                optionButton3.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[8]:
-            optionButton2.config(text='')
-            optionButton1.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[7]:
+                optionButton1.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[9]:
-            optionButton1.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[8]:
+                optionButton2.config(text='')
+                optionButton1.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[10]:
-            optionButton2.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[9]:
+                optionButton1.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[11]:
-            optionButton3.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[10]:
+                optionButton2.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[12]:
-            optionButton4.config(text='')
-            optionButton2.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[11]:
+                optionButton3.config(text='')
+                optionButton4.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[13]:
-            optionButton2.config(text='')
-            optionButton3.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[12]:
+                optionButton4.config(text='')
+                optionButton2.config(text='')
 
-        if questionArea.get(1.0, 'end-1c') == questions[14]:
-            optionButton1.config(text='')
-            optionButton4.config(text='')
+            if questionArea.get(1.0, 'end-1c') == questions[13]:
+                optionButton2.config(text='')
+                optionButton3.config(text='')
+
+            if questionArea.get(1.0, 'end-1c') == questions[14]:
+                optionButton1.config(text='')
+                optionButton4.config(text='')
+
+
+
+        
+        ll50_screenroot = Toplevel()
+        ll50_screenroot.overrideredirect(True)
+        ll50_screenroot.grab_set()
+        ll50_screenroot.config(bg='black')
+        ll50_screenroot.after(2000,lifeline50_initiate)
+        screen_width = ll50_screenroot.winfo_screenwidth()
+        screen_height = ll50_screenroot.winfo_screenheight()
+        window_width = 200
+        window_height = 300
+        x = (screen_width/2) - (window_width/2)
+        y = (screen_height/2) - (window_height/2)
+        ll50_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+        ll50_screenroot.title('Wrong!')
+        img = PhotoImage(file='Kbc/.png')
+        imgLabel = Label(ll50_screenroot, image=img, bd=0)
+        imgLabel.pack(pady=30)
+        ll50label = Label(ll50_screenroot, text='initiating.', font=('arial', 12), bg='black', fg='white')
+        ll50label.pack(pady=3)
+        time.sleep(1)
+        ll50label.config(text='Done!')
 
 
     def phoneLifeLine():
@@ -403,156 +431,184 @@ def startgame():
 
 
     def audiencePoleLifeline():
-        audiencePoleButton.config(image=audiencePolex)
-        audiencePoleButton.config(state=DISABLED)
 
-        progressbarA.place(x=580, y=190)
-        progressbarLabelA.place(x=580, y=320)
+        def audiencepoleLifeline_initiate():
+            ll_screenroot.destroy()
+            audiencePoleButton.config(image=audiencePolex)
+            audiencePoleButton.config(state=DISABLED)
 
-        progressbarB.place(x=620, y=190)
-        progressbarLabelB.place(x=620, y=320)
+            progressbarA.place(x=580, y=190)
+            progressbarLabelA.place(x=580, y=320)
 
-        progressbarC.place(x=660, y=190)
-        progressbarLabelC.place(x=660, y=320)
+            progressbarB.place(x=620, y=190)
+            progressbarLabelB.place(x=620, y=320)
 
-        progressbarD.place(x=700, y=190)
-        progressbarLabelD.place(x=700, y=320)
+            progressbarC.place(x=660, y=190)
+            progressbarLabelC.place(x=660, y=320)
 
-        if questionArea.get(1.0, 'end-1c') == questions[0]: #Question 1 Poll
-            progressbarA.config(value=30)
+            progressbarD.place(x=700, y=190)
+            progressbarLabelD.place(x=700, y=320)
 
-            progressbarB.config(value=60)
+            if questionArea.get(1.0, 'end-1c') == questions[0]: #Question 1 Poll
+                progressbarA.config(value=30)
 
-            progressbarC.config(value=40)
+                progressbarB.config(value=60)
 
-            progressbarD.config(value=90)
+                progressbarC.config(value=40)
 
-        if questionArea.get(1.0, 'end-1c') == questions[1]: #Question 2 Poll
-            progressbarA.config(value=30)
+                progressbarD.config(value=90)
 
-            progressbarB.config(value=50)
+            if questionArea.get(1.0, 'end-1c') == questions[1]: #Question 2 Poll
+                progressbarA.config(value=30)
 
-            progressbarC.config(value=40)
+                progressbarB.config(value=50)
 
-            progressbarD.config(value=80)
+                progressbarC.config(value=40)
 
-        if questionArea.get(1.0, 'end-1c') == questions[2]: #Question 3 Poll 
-            progressbarA.config(value=70)
+                progressbarD.config(value=80)
 
-            progressbarB.config(value=60)
+            if questionArea.get(1.0, 'end-1c') == questions[2]: #Question 3 Poll 
+                progressbarA.config(value=70)
 
-            progressbarC.config(value=50)
+                progressbarB.config(value=60)
 
-            progressbarD.config(value=90)
+                progressbarC.config(value=50)
 
-        if questionArea.get(1.0, 'end-1c') == questions[3]:
-            progressbarA.config(value=90)
+                progressbarD.config(value=90)
 
-            progressbarB.config(value=70)
+            if questionArea.get(1.0, 'end-1c') == questions[3]:
+                progressbarA.config(value=90)
 
-            progressbarC.config(value=30)
+                progressbarB.config(value=70)
 
-            progressbarD.config(value=50)
+                progressbarC.config(value=30)
 
-        if questionArea.get(1.0, 'end-1c') == questions[4]:
-            progressbarA.config(value=80)
+                progressbarD.config(value=50)
 
-            progressbarB.config(value=20)
+            if questionArea.get(1.0, 'end-1c') == questions[4]:
+                progressbarA.config(value=80)
 
-            progressbarC.config(value=40)
+                progressbarB.config(value=20)
 
-            progressbarD.config(value=30)
+                progressbarC.config(value=40)
 
-        if questionArea.get(1.0, 'end-1c') == questions[5]:
-            progressbarA.config(value=40)
+                progressbarD.config(value=30)
 
-            progressbarB.config(value=10)
+            if questionArea.get(1.0, 'end-1c') == questions[5]:
+                progressbarA.config(value=40)
 
-            progressbarC.config(value=80)
+                progressbarB.config(value=10)
 
-            progressbarD.config(value=30)
+                progressbarC.config(value=80)
 
-        if questionArea.get(1.0, 'end-1c') == questions[6]: #Done 
-            progressbarA.config(value=30)
+                progressbarD.config(value=30)
 
-            progressbarB.config(value=80)
+            if questionArea.get(1.0, 'end-1c') == questions[6]: #Done 
+                progressbarA.config(value=30)
 
-            progressbarC.config(value=20)
+                progressbarB.config(value=80)
 
-            progressbarD.config(value=40)
+                progressbarC.config(value=20)
 
-        if questionArea.get(1.0, 'end-1c') == questions[7]:
-            progressbarA.config(value=10)
+                progressbarD.config(value=40)
 
-            progressbarB.config(value=20)
+            if questionArea.get(1.0, 'end-1c') == questions[7]:
+                progressbarA.config(value=10)
 
-            progressbarC.config(value=70)
+                progressbarB.config(value=20)
 
-            progressbarD.config(value=30)
+                progressbarC.config(value=70)
 
-        if questionArea.get(1.0, 'end-1c') == questions[8]:
-            progressbarA.config(value=20)
+                progressbarD.config(value=30)
 
-            progressbarB.config(value=85)
+            if questionArea.get(1.0, 'end-1c') == questions[8]:
+                progressbarA.config(value=20)
 
-            progressbarC.config(value=70)
+                progressbarB.config(value=85)
 
-            progressbarD.config(value=90)
+                progressbarC.config(value=70)
 
-        if questionArea.get(1.0, 'end-1c') == questions[9]:
-            progressbarA.config(value=30)
+                progressbarD.config(value=90)
 
-            progressbarB.config(value=70)
+            if questionArea.get(1.0, 'end-1c') == questions[9]:
+                progressbarA.config(value=30)
 
-            progressbarC.config(value=50)
+                progressbarB.config(value=70)
 
-            progressbarD.config(value=60)
+                progressbarC.config(value=50)
 
-        if questionArea.get(1.0, 'end-1c') == questions[10]:
-            progressbarA.config(value=40)
+                progressbarD.config(value=60)
 
-            progressbarB.config(value=20)
+            if questionArea.get(1.0, 'end-1c') == questions[10]:
+                progressbarA.config(value=40)
 
-            progressbarC.config(value=70)
+                progressbarB.config(value=20)
 
-            progressbarD.config(value=50)
+                progressbarC.config(value=70)
 
-        if questionArea.get(1.0, 'end-1c') == questions[11]:
-            progressbarA.config(value=30)
+                progressbarD.config(value=50)
 
-            progressbarB.config(value=90)
+            if questionArea.get(1.0, 'end-1c') == questions[11]:
+                progressbarA.config(value=30)
 
-            progressbarC.config(value=70)
+                progressbarB.config(value=90)
 
-            progressbarD.config(value=40)
+                progressbarC.config(value=70)
 
-        if questionArea.get(1.0, 'end-1c') == questions[12]:
-            progressbarA.config(value=20)
+                progressbarD.config(value=40)
 
-            progressbarB.config(value=60)
+            if questionArea.get(1.0, 'end-1c') == questions[12]:
+                progressbarA.config(value=20)
 
-            progressbarC.config(value=100)
+                progressbarB.config(value=60)
 
-            progressbarD.config(value=10)
+                progressbarC.config(value=100)
 
-        if questionArea.get(1.0, 'end-1c') == questions[13]:
-            progressbarA.config(value=100)
+                progressbarD.config(value=10)
 
-            progressbarB.config(value=35)
+            if questionArea.get(1.0, 'end-1c') == questions[13]:
+                progressbarA.config(value=100)
 
-            progressbarC.config(value=40)
+                progressbarB.config(value=35)
 
-            progressbarD.config(value=80)
+                progressbarC.config(value=40)
 
-        if questionArea.get(1.0, 'end-1c') == questions[14]:
-            progressbarA.config(value=60)
+                progressbarD.config(value=80)
 
-            progressbarB.config(value=115)
+            if questionArea.get(1.0, 'end-1c') == questions[14]:
+                progressbarA.config(value=60)
 
-            progressbarC.config(value=90)
+                progressbarB.config(value=115)
 
-            progressbarD.config(value=80)
+                progressbarC.config(value=90)
 
+                progressbarD.config(value=80)
+
+
+#Root Initiation!!!
+        ll_screenroot = Toplevel()
+        ll_screenroot.overrideredirect(True)
+        ll_screenroot.grab_set()
+        ll_screenroot.config(bg='black')
+        ll_screenroot.after(2000,audiencepoleLifeline_initiate)
+        screen_width = ll_screenroot.winfo_screenwidth()
+        screen_height = ll_screenroot.winfo_screenheight()
+        window_width = 200
+        window_height = 300
+        x = (screen_width/2) - (window_width/2)
+        y = (screen_height/2) - (window_height/2)
+        ll_screenroot.geometry("%dx%d+%d+%d" % (window_width, window_height, x, y))
+        ll_screenroot.title('Lifeline')
+        img = PhotoImage(file='Kbc/.png')
+        imgLabel = Label(ll_screenroot, image=img, bd=0)
+        imgLabel.pack(pady=30)
+        ll50label = Label(ll_screenroot, text='initiating.', font=('arial', 12), bg='black', fg='white')
+        ll50label.pack(pady=3)
+        time.sleep(1)
+        ll50label.config(text='Done!')
+
+
+        
 
     def asktheexpertlifeline():
         mixer.music.stop()

@@ -8,8 +8,6 @@ Made by
 3. [Shreshth Gupta](https://www.instagram.com/shreshth_0703/)
 
 
-A Property for Mayoor Private School 
-
 
 <p> This App has been made using the following modules </p>
 <p> 1 . Tkinter ( for visual graphics )</p>
